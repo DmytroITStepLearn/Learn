@@ -6,6 +6,7 @@ The C# language is the most popular language for the [.NET platform](https://lea
 You can use Visual Studio, VS Code or JetBrains Rider to write, debug and compile your C# projects. You can find links to install those programs below:
 
 [**Install Visual Studio or VS Code**](https://visualstudio.microsoft.com/downloads/)
+
 [**Install JetBrains Rider**](https://www.jetbrains.com/rider/download)
 
 After insallation navigate to 'Console App' and create a project
@@ -14,7 +15,7 @@ After insallation navigate to 'Console App' and create a project
 
 When you create a console project in C# the project looks like this:
 
-[Project structure]('../Images/')
+![Project structure](../Images/project-structure.jpg)
 
 Here we have a solution, dependencies and a file Program.cs. We will talk about first two in our next lessons. In file __Program.cs__ we have a class Program and a method Main - entry point. Every project starts in method Main. It usually looks like this:
 
