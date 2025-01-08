@@ -113,3 +113,61 @@ User user3 = user1;
 Console.WriteLine(user1 == user3);
 // true
 ```
+
+## Ref and Out
+
+In C# we can use keywords **ref** and **out** to make value types behave like reference types. This way is less bad than boxing the value type and can help in some situations.
+**Ref** keyword allows to get a reference of a value type data.
+
+```C#
+int number1 = 100;  
+int number2 = 200;  
+  
+Swap(number1, number2);  
+Console.WriteLine($"number1: {number1}, number2: {number2}");  
+// number1: 100, number2: 200  
+  
+SwapRef(ref number1, ref number2);  
+Console.WriteLine($"number1: {number1}, number2: {number2}");  
+// number1: 200, number2: 100  
+  
+void Swap(int number1, int number2)  
+{  
+  int temp = number1;  
+  number1 = number2;  
+  number2 = temp;  
+}  
+  
+void SwapRef(ref int number1, ref int number2)  
+{  
+  int temp = number1;  
+ number1 = number2; number2 = temp;}
+```
+
+**Out** keyword allows to set value to some variable by reference in other method
+
+```C#
+if (int.TryParse("123", out int number))  
+{  
+  Console.WriteLine($"Result: {number}");  
+}  
+else  
+{  
+  Console.WriteLine("Not a number");  
+}  
+  
+bool TryParse(string input, out int number)  
+{  
+ number = 0;  
+  for (int i = 0; i < input.Length; i++)  
+ {  if (!char.IsDigit(input[i]))   
+ return false;  
+  
+ number *= 10;  
+ number += input[i] - '0';  
+ }  
+  return true;  
+}
+```
+
+> By the way, there's already implemented method int.TryParse(string, out int) in C#
